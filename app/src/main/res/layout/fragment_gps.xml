@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="@color/md_theme_background"
+     android:fillViewport="true">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:padding="12dp"
+         android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="12dp"
+             app:cardBackgroundColor="@color/md_theme_primaryContainer"
+             app:cardCornerRadius="12dp"
+             app:contentPadding="16dp">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center_vertical"
+                 android:orientation="horizontal">
+
+                <ImageView
+                     android:layout_height="24dp"
+                     android:layout_width="24dp"
+                     android:src="@android:drawable/ic_menu_mylocation"
+                     android:tint="@color/md_theme_onPrimaryContainer" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="0dp"
+                     android:textSize="16sp"
+                     android:fontFamily="sans-serif-medium"
+                     android:textColor="@color/md_theme_onPrimaryContainer"
+                     android:layout_marginStart="12dp"
+                     android:layout_weight="1"
+                     android:id="@+id/tvGpsStatus"
+                     android:text="等待操作" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="12dp"
+             app:strokeWidth="0dp"
+             app:cardBackgroundColor="@color/md_theme_surfaceVariant"
+             app:cardCornerRadius="16dp"
+             app:contentPadding="0dp">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     app:backgroundTint="@color/md_theme_primary"
+                     android:layout_margin="16dp"
+                     android:textSize="16sp"
+                     app:cornerRadius="28dp"
+                     style="@style/Widget.Material3.Button"
+                     android:id="@+id/btnStartStopGps"
+                     android:text="开启 GPS 测速"
+                     android:textStyle="bold" />
+
+                <LinearLayout
+                     android:layout_height="48dp"
+                     android:layout_width="match_parent"
+                     android:gravity="center_vertical"
+                     android:background="?attr/selectableItemBackground"
+                     android:clickable="true"
+                     android:paddingHorizontal="16dp"
+                     android:focusable="true"
+                     android:id="@+id/headerSettingsGps">
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="0dp"
+                         android:textSize="16sp"
+                         android:fontFamily="sans-serif-medium"
+                         android:textColor="@color/md_theme_onSurface"
+                         android:layout_weight="1"
+                         android:text="⚙️ 设置" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="16sp"
+                         android:textColor="@color/md_theme_onSurfaceVariant"
+                         android:id="@+id/tvExpandIndicatorGps"
+                         android:text="▼" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:visibility="visible"
+                     android:orientation="vertical"
+                     android:paddingBottom="16dp"
+                     android:paddingHorizontal="16dp"
+                     android:id="@+id/settingsContentGps">
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:gravity="center_vertical">
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             android:textSize="16sp"
+                             android:fontFamily="sans-serif-medium"
+                             android:textColor="@color/md_theme_onSurface"
+                             android:layout_weight="1"
+                             android:text="使用 km/h" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                             android:layout_height="wrap_content"
+                             android:layout_width="wrap_content"
+                             android:checked="false"
+                             android:id="@+id/switchUnitGps" />
+
+                    </LinearLayout>
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="16sp"
+                         android:fontFamily="sans-serif-medium"
+                         android:textColor="@color/md_theme_onSurface"
+                         android:layout_marginTop="16dp"
+                         android:text="图表刷新率" />
+
+                    <RadioGroup
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:orientation="horizontal"
+                         android:layout_marginTop="4dp"
+                         android:id="@+id/radioGroupRefreshGps">
+
+                        <RadioButton
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             android:buttonTint="@color/md_theme_primary"
+                             android:textColor="@color/md_theme_onSurfaceVariant"
+                             style="@style/Widget.Material3.CompoundButton.RadioButton"
+                             android:layout_weight="1"
+                             android:id="@+id/rbLowGps"
+                             android:text="10fps" />
+
+                        <RadioButton
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             android:buttonTint="@color/md_theme_primary"
+                             android:textColor="@color/md_theme_onSurfaceVariant"
+                             style="@style/Widget.Material3.CompoundButton.RadioButton"
+                             android:checked="true"
+                             android:layout_weight="1"
+                             android:id="@+id/rbMediumGps"
+                             android:text="30fps" />
+
+                        <RadioButton
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             android:buttonTint="@color/md_theme_primary"
+                             android:textColor="@color/md_theme_onSurfaceVariant"
+                             style="@style/Widget.Material3.CompoundButton.RadioButton"
+                             android:layout_weight="1"
+                             android:id="@+id/rbHighGps"
+                             android:text="60fps" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:gravity="center_vertical"
+                         android:layout_marginTop="16dp">
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             android:textSize="16sp"
+                             android:fontFamily="sans-serif-medium"
+                             android:textColor="@color/md_theme_onSurface"
+                             android:layout_weight="1"
+                             android:text="平滑显示 (3秒平均)" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                             android:layout_height="wrap_content"
+                             android:layout_width="wrap_content"
+                             android:checked="false"
+                             android:id="@+id/switchSmoothGps" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="12dp"
+             app:cardBackgroundColor="@color/md_theme_primaryContainer"
+             app:cardCornerRadius="24dp"
+             app:contentPadding="24dp">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:textAlignment="center"
+                 android:textSize="48sp"
+                 android:fontFamily="sans-serif-black"
+                 android:textColor="@color/md_theme_onPrimaryContainer"
+                 android:id="@+id/tvGpsSpeed"
+                 android:text="0.00 m/s"
+                 android:textStyle="bold" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+             android:layout_height="0dp"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="12dp"
+             app:cardBackgroundColor="@color/md_theme_surfaceVariant"
+             app:cardCornerRadius="12dp"
+             app:contentPadding="4dp"
+             android:layout_weight="1">
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 android:orientation="vertical">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="12sp"
+                     android:fontFamily="sans-serif-medium"
+                     android:textColor="@color/md_theme_onSurfaceVariant"
+                     android:layout_marginStart="8dp"
+                     android:text="GPS 速度 (m/s)" />
+
+                <com.example.accmeter.RealTimeChart
+                     android:layout_height="0dp"
+                     android:layout_width="match_parent"
+                     android:layout_weight="1"
+                     android:id="@+id/chartGpsSpeed" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             app:backgroundTint="@color/md_theme_primary"
+             android:textSize="16sp"
+             app:cornerRadius="28dp"
+             style="@style/Widget.Material3.Button"
+             android:id="@+id/btnClearGps"
+             android:text="清 零"
+             android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>

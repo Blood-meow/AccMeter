@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="@color/md_theme_background"
+     android:fillViewport="true">
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:padding="12dp"
+         android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="12dp"
+             app:strokeWidth="0dp"
+             app:cardBackgroundColor="@color/md_theme_surfaceVariant"
+             app:cardCornerRadius="16dp"
+             app:contentPadding="0dp">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:orientation="vertical">
+
+                <LinearLayout
+                     android:layout_height="48dp"
+                     android:layout_width="match_parent"
+                     android:gravity="center_vertical"
+                     android:background="?attr/selectableItemBackground"
+                     android:clickable="true"
+                     android:paddingHorizontal="16dp"
+                     android:focusable="true"
+                     android:id="@+id/headerSettings">
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="0dp"
+                         android:textSize="16sp"
+                         android:fontFamily="sans-serif-medium"
+                         android:textColor="@color/md_theme_onSurface"
+                         android:layout_weight="1"
+                         android:text="⚙️ 设置" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="16sp"
+                         android:textColor="@color/md_theme_onSurfaceVariant"
+                         android:id="@+id/tvExpandIndicator"
+                         android:text="▼" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:visibility="visible"
+                     android:orientation="vertical"
+                     android:paddingBottom="16dp"
+                     android:paddingHorizontal="16dp"
+                     android:id="@+id/settingsContent">
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:gravity="center_vertical">
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             android:textSize="16sp"
+                             android:fontFamily="sans-serif-medium"
+                             android:textColor="@color/md_theme_onSurface"
+                             android:layout_weight="1"
+                             android:text="使用 km/h" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                             android:layout_height="wrap_content"
+                             android:layout_width="wrap_content"
+                             android:checked="false"
+                             android:id="@+id/switchUnit" />
+
+                    </LinearLayout>
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:textSize="16sp"
+                         android:fontFamily="sans-serif-medium"
+                         android:textColor="@color/md_theme_onSurface"
+                         android:layout_marginTop="16dp"
+                         android:text="图表刷新率" />
+
+                    <RadioGroup
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:orientation="horizontal"
+                         android:layout_marginTop="4dp"
+                         android:id="@+id/radioGroupRefresh">
+
+                        <RadioButton
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             android:buttonTint="@color/md_theme_primary"
+                             android:textColor="@color/md_theme_onSurfaceVariant"
+                             style="@style/Widget.Material3.CompoundButton.RadioButton"
+                             android:layout_weight="1"
+                             android:id="@+id/rbLow"
+                             android:text="10fps" />
+
+                        <RadioButton
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             android:buttonTint="@color/md_theme_primary"
+                             android:textColor="@color/md_theme_onSurfaceVariant"
+                             style="@style/Widget.Material3.CompoundButton.RadioButton"
+                             android:checked="true"
+                             android:layout_weight="1"
+                             android:id="@+id/rbMedium"
+                             android:text="30fps" />
+
+                        <RadioButton
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             android:buttonTint="@color/md_theme_primary"
+                             android:textColor="@color/md_theme_onSurfaceVariant"
+                             style="@style/Widget.Material3.CompoundButton.RadioButton"
+                             android:layout_weight="1"
+                             android:id="@+id/rbHigh"
+                             android:text="60fps" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:gravity="center_vertical"
+                         android:layout_marginTop="16dp">
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="0dp"
+                             android:textSize="16sp"
+                             android:fontFamily="sans-serif-medium"
+                             android:textColor="@color/md_theme_onSurface"
+                             android:layout_weight="1"
+                             android:text="平滑显示 (3秒平均)" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                             android:layout_height="wrap_content"
+                             android:layout_width="wrap_content"
+                             android:checked="false"
+                             android:id="@+id/switchSmooth" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="12dp"
+             app:strokeWidth="0dp"
+             app:cardBackgroundColor="@color/md_theme_primaryContainer"
+             app:cardCornerRadius="24dp"
+             app:contentPadding="24dp">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:textAlignment="center"
+                 android:textSize="48sp"
+                 android:fontFamily="sans-serif-black"
+                 android:textColor="@color/md_theme_onPrimaryContainer"
+                 android:id="@+id/tvSpeed"
+                 android:text="0.00 m/s"
+                 android:textStyle="bold" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+             android:layout_height="0dp"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="12dp"
+             app:cardBackgroundColor="@color/md_theme_surfaceVariant"
+             app:cardCornerRadius="12dp"
+             app:contentPadding="4dp"
+             android:layout_weight="1">
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 android:orientation="vertical">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="12sp"
+                     android:fontFamily="sans-serif-medium"
+                     android:textColor="@color/md_theme_onSurfaceVariant"
+                     android:layout_marginStart="8dp"
+                     android:text="合速度" />
+
+                <com.example.accmeter.RealTimeChart
+                     android:layout_height="0dp"
+                     android:layout_width="match_parent"
+                     android:layout_weight="1"
+                     android:id="@+id/chartTotalSpeed" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+             android:layout_height="0dp"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="12dp"
+             app:cardBackgroundColor="@color/md_theme_surfaceVariant"
+             app:cardCornerRadius="12dp"
+             app:contentPadding="4dp"
+             android:layout_weight="1">
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 android:orientation="vertical">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="12sp"
+                     android:fontFamily="sans-serif-medium"
+                     android:textColor="@color/md_theme_onSurfaceVariant"
+                     android:layout_marginStart="8dp"
+                     android:text="线性加速度 (m/s²)" />
+
+                <com.example.accmeter.RealTimeChart
+                     android:layout_height="0dp"
+                     android:layout_width="match_parent"
+                     android:layout_weight="1"
+                     android:id="@+id/chartAccel" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+             android:layout_height="0dp"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="12dp"
+             app:cardBackgroundColor="@color/md_theme_surfaceVariant"
+             app:cardCornerRadius="12dp"
+             app:contentPadding="4dp"
+             android:layout_weight="1">
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 android:orientation="vertical">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:textSize="12sp"
+                     android:fontFamily="sans-serif-medium"
+                     android:textColor="@color/md_theme_onSurfaceVariant"
+                     android:layout_marginStart="8dp"
+                     android:text="分速度 (m/s)" />
+
+                <com.example.accmeter.RealTimeChart
+                     android:layout_height="0dp"
+                     android:layout_width="match_parent"
+                     android:layout_weight="1"
+                     android:id="@+id/chartSpeed" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             app:backgroundTint="@color/md_theme_primary"
+             android:textSize="16sp"
+             app:cornerRadius="28dp"
+             style="@style/Widget.Material3.Button"
+             android:id="@+id/btnClear"
+             android:text="清 零"
+             android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>
