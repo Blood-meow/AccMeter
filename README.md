@@ -1,4 +1,3 @@
-# speed_calculator
 # ⚡ AccMeter — 加速度 & GPS 双模测速仪
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9%2B-7F52FF?logo=kotlin)](https://kotlinlang.org)
